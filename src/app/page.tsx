@@ -1,6 +1,6 @@
 "use client";
 
-import DessinProcess from "@/components/svg/DessinProcess";
+import Logo from "@/components/svg/Logo";
 import { useState } from "react";
 
 export default function Home() {
@@ -20,10 +20,7 @@ export default function Home() {
         <main
           className={"flex min-h-screen flex-col items-center justify-center"}
         >
-          {/* <Logo />
-          <DessinOne />
-          <DessinMarketing /> */}
-          <DessinProcess />
+          <Logo />
         </main>
       </>
     );
