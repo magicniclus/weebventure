@@ -1,8 +1,20 @@
+"use client";
+
+import { useEffect } from "react";
+
+import { gsap } from "gsap";
 import Image from "next/image";
 import Nav from "./Nav";
 import { Button } from "./ui/button";
 
 const Hero = () => {
+  useEffect(() => {
+    gsap.to(".text-highlight::before", {
+      duration: 1,
+      width: "100%",
+      delay: 1,
+    });
+  }, []);
   return (
     <>
       <style jsx>{`
@@ -17,7 +29,7 @@ const Hero = () => {
             rgba(255, 255, 255, 0) 0%,
             #5174b4 100%
           );
-          z-index: 20; /* S'assure qu'il est au-dessus de l'image mais sous le texte */
+          z-index: 20;
         }
 
         .text-highlight {
@@ -49,7 +61,7 @@ const Hero = () => {
           position: absolute;
           right: 0;
           bottom: 0;
-          width: 2px;
+          width: 1px;
           height: 100%;
           background-color: white;
           transition: background-color 0.5s ease;
@@ -77,9 +89,9 @@ const Hero = () => {
           position: absolute;
           right: 0;
           bottom: 0;
-          width: 2px; /* Largeur de la ligne à droite */
-          height: 100%; /* Hauteur initiale à 100% */
-          background: white; /* Arrière-plan initial blanc */
+          width: 1px;
+          height: 100%;
+          background: white;
           z-index: 30;
           transition: background-color 0.5s ease;
         }
@@ -96,7 +108,7 @@ const Hero = () => {
             background: white;
             background-size: 100% 0%;
           }
-          100% {
+          50% {
             background: linear-gradient(to top, #5174b4 0%, white 100%);
             background-size: 100% 100%;
           }
