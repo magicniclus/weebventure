@@ -1,6 +1,8 @@
 "use client";
 
+import CTA from "@/components/CTA";
 import Hero from "@/components/Hero";
+import LogoEntreprise from "@/components/LogoEntreprise";
 import Logo from "@/components/svg/Logo";
 
 import { useState } from "react";
@@ -23,7 +25,10 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24"></main>
+      <main className="flex min-h-screen flex-col items-center p-24">
+        <CTA />
+        <LogoEntreprise />
+      </main>
     </>
   );
 }
