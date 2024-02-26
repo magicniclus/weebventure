@@ -27,7 +27,7 @@ const BackgroundHero = () => {
 
   return (
     <div
-      className="absolute top-0 left-0 w-full h-full overflow-hidden z-0"
+      className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 2xl:flex hidden"
       style={{
         width: "100%",
         height: "auto",
@@ -42,7 +42,6 @@ const BackgroundHero = () => {
         viewBox="0 0 1728 893"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="icon"
       >
         <defs>
           <mask id="mask">
