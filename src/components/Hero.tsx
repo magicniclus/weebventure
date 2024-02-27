@@ -202,11 +202,11 @@ const Hero = () => {
     gsap.fromTo(
       ".vertical-text",
       {
-        x: -50,
+        y: 100,
         opacity: 0,
       },
       {
-        x: 20,
+        y: 0,
         opacity: 1,
         duration: 0.5,
         delay: 1.2,
