@@ -65,6 +65,173 @@ const Hero = () => {
     setHoverStates({ ...hoverStates, [itemName]: false });
   };
 
+  const animAllElements = () => {
+    gsap.fromTo(
+      ".vignette",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".title",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.2,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".text",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.4,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".tagOne",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.6,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".tagTwo",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.7,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".tagThree",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 0.8,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".button",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
+        delay: 1,
+        ease: "power2.out",
+      }
+    );
+
+    gsap.fromTo(
+      ".imageContainer",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1.2,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".lignContainer",
+      {
+        y: 50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1.5,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      ".vertical-text",
+      {
+        x: -50,
+        opacity: 0,
+      },
+      {
+        x: 20,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1.2,
+        stagger: 0.1,
+        ease: "power1",
+      }
+    );
+    gsap.fromTo(
+      ".lignRight::before",
+      {
+        y: -1000,
+      },
+      {
+        y: 0,
+        duration: 0.5,
+        delay: 1.7,
+        ease: "power2.out",
+      }
+    );
+  };
+
+  useEffect(() => {
+    animAllElements();
+  }, []);
+
   return (
     <>
       {/* Styles et autres éléments */}
@@ -118,6 +285,7 @@ const Hero = () => {
           z-index: 31;
           color: white;
           transition: transform 0.3s ease;
+          opacity: 0;
         }
         .lignRight:hover .vertical-text {
           transform: translateX(100%);
@@ -130,17 +298,6 @@ const Hero = () => {
           cursor: pointer;
           z-index: 50;
           height: 100%;
-        }
-
-        .lignRight::before {
-          content: "";
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          width: 1px;
-          height: 100%;
-          background-color: white;
-          transition: background-color 0.5s ease;
         }
 
         .lignRight::before {
@@ -201,39 +358,59 @@ const Hero = () => {
             background-size: 100% 100%;
           }
         }
+        @keyframes fillUpFromBottom {
+          from {
+            transform: scaleY(0);
+          }
+          to {
+            transform: scaleY(1);
+          }
+        }
+
+        .lignRight::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 1px;
+          height: 100%;
+          background-color: white;
+          transform-origin: bottom;
+          animation: fillUpFromBottom 1.7s ease forwards 1.7s;
+        }
       `}</style>
       <div className="w-full relative bg-accentDev/10 pb-10">
         <Nav />
         <section className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col items-center">
           {/* Section gauche */}
           <div className="md:w-5/12 w-full">
-            <div className="px-3 py-1 rounded-full border border-primaryDev text-primaryDev max-w-max text-[12px] md:mt-10 bg-primaryDev/5">
+            <div className="px-3 py-1 rounded-full border border-primaryDev text-primaryDev max-w-max text-[12px] md:mt-10 bg-primaryDev/5 vignette">
               Agence web design & développement web
             </div>
-            <h1 className="text-textDev font-extrabold text-[36px] mt-10">
+            <h1 className="text-textDev font-extrabold text-[36px] mt-10 title">
               Nous créons votre{" "}
               <span className="text-highlight">outils Web.</span>{" "}
               <span className="text-accentDev">
                 Vous développez votre activité.
               </span>
             </h1>
-            <p className="text-[12px] w-10/12 mt-3">
+            <p className="text-[12px] w-10/12 mt-3 text">
               Nos experts optimisent votre acquisition en développement vos
               outils web et marketing afin de trouver les meilleurs leviers de
               croissance.
             </p>
             <div className="text-[12px] flex mt-3">
-              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full">
+              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full tagOne">
                 #DESIGN
               </p>
-              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full ml-3">
+              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full ml-3 tagTwo">
                 #DEVELOPPEMENT
               </p>
-              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full ml-3">
+              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full ml-3 tagThree">
                 #MAINTENANCE
               </p>
             </div>
-            <div className="mt-10">
+            <div className="mt-10 button">
               <Button variant="perso">Votre projet</Button>
               <Button variant="persoSecondary" className="ml-3">
                 Projets récents
@@ -243,7 +420,7 @@ const Hero = () => {
 
           {/* Section droite avec images */}
           <div className="md:w-7/12 w-full md:mt-0 mt-14 min-h-[400px] relative">
-            <div className="relative h-[400px] overflow-hidden">
+            <div className="relative h-[400px] overflow-hidden imageContainer">
               {/* Image précédente */}
               {prevImage && (
                 <Image
@@ -266,13 +443,15 @@ const Hero = () => {
               />
               {/* Votre logique de survol ici */}
             </div>
-            <div className="overlay-gradient"></div>
+            <div className="overlay-gradient imageContainer"></div>
             {/* Vos éléments de texte verticaux ici */}
             <div className="absolute inset-0 flex justify-between items-end w-full">
               {imageOptions.map((item) => (
                 <div
                   key={item.name}
-                  className={`flex-1 lignRight relative w-1/4 ${
+                  className={`${
+                    item.name
+                  } lignContainer flex-1 lignRight relative w-1/4 ${
                     hoverStates[item.name as keyof typeof hoverStates]
                       ? ""
                       : "reverseAnimation"
@@ -280,7 +459,9 @@ const Hero = () => {
                   onMouseEnter={() => handleMouseEnter(item.path, item.name)} // Assurez-vous d'utiliser item.path ici
                   onMouseLeave={() => handleMouseLeave(item.name)}
                 >
-                  <p className="vertical-text">{item.name}</p>
+                  <p className={`vertical-text ${item.name + "-text"}`}>
+                    {item.name}
+                  </p>
                 </div>
               ))}
             </div>
