@@ -10,78 +10,78 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DessinProcess = () => {
   useEffect(() => {
+    // Sélection des éléments
     const code = document.querySelectorAll(".code");
     const lign = document.querySelector(".lign");
     const light = document.querySelectorAll(".light");
     const cercleLight = document.querySelector(".cercleLight");
     const circleCode = document.querySelector(".circleCode");
-    const crayon = document.querySelectorAll(".crayon");
-    const cercleOne = document.querySelector(".cercleOne");
-    const cercleTwo = document.querySelector(".cercleTwo");
 
-    const tl = gsap.timeline({
-      defaults: { duration: 0.7, ease: "easeOut" },
-      // Décommentez pour activer le ScrollTrigger
-      scrollTrigger: {
-        trigger: light,
-        start: "top 80%",
-        end: "top 50%",
-        // markers: true,
-      },
-    });
-
-    // Initialisation : Rendre la ligne invisible avant l'animation
-    if (lign) {
-      const lignLength = (lign as SVGPathElement).getTotalLength();
+    // Vérification si les éléments nécessaires existent
+    if (lign && cercleLight && circleCode) {
+      const lignLength = lign.getTotalLength();
       gsap.set(lign, {
         strokeDasharray: lignLength,
         strokeDashoffset: lignLength,
-        autoAlpha: 0, // Assurez-vous que l'opacité est à 0
+        autoAlpha: 0,
+      });
+
+      const tl = gsap.timeline({
+        defaults: { duration: 0.7, ease: "easeOut" },
+        scrollTrigger: {
+          trigger: ".dessinProcess",
+          start: "top center",
+          end: "bottom center",
+          toggleActions: "play none none none",
+        },
+      });
+
+      // Séquence d'animation initiale
+      tl.fromTo(
+        [cercleLight, circleCode],
+        { autoAlpha: 0, scale: 0 },
+        { autoAlpha: 1, scale: 1 }
+      )
+        .fromTo(
+          lign,
+          { strokeDashoffset: lignLength },
+          { strokeDashoffset: 0, autoAlpha: 1, duration: 1, ease: "power2.out" }
+        )
+        .fromTo(
+          code,
+          { autoAlpha: 0, y: 20 },
+          { autoAlpha: 1, y: 0, stagger: 0.1 },
+          ">0.1"
+        )
+        .fromTo(
+          light,
+          { autoAlpha: 0 },
+          { autoAlpha: 1, stagger: 0.1 },
+          ">0.1"
+        );
+
+      // Ajout de l'effet de lévitation à la fin
+      const targetsToHover = [code, cercleLight, circleCode, ...light];
+      targetsToHover.forEach((target) => {
+        gsap.to(target, {
+          y: "-=10",
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          duration: 1.5,
+          delay: tl.duration(), // Assure que l'effet de lévitation commence après la timeline principale
+        });
       });
     }
-
-    // Apparition des cercles en premier
-    // Remove the existing declaration of 'lign'
-    // const lign = document.querySelector(".lign") as SVGPathElement;
-
-    tl.fromTo(
-      [cercleOne, cercleTwo],
-      { autoAlpha: 0, scale: 0 },
-      { autoAlpha: 1, scale: 1 }
-    )
-      // Ensuite, animation du crayon
-      .fromTo(crayon, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0 }, ">0.5")
-      // Rendre la ligne visible puis animer son apparition
-      .to(lign, { autoAlpha: 1, immediateRender: false }, "-=0.5") // Rendre la ligne visible
-      .fromTo(
-        lign as SVGPathElement | null, // Add null check for 'lign'
-        {
-          strokeDashoffset:
-            (lign as SVGPathElement | null)?.getTotalLength() ?? 0,
-        }, // Use optional chaining and nullish coalescing operator
-        { strokeDashoffset: 0, duration: 1, ease: "power2.out" }
-      )
-      // Apparition de circleCode au milieu de l'animation de la ligne
-      .fromTo(
-        circleCode,
-        { autoAlpha: 0, scale: 0 },
-        { autoAlpha: 1, scale: 1 },
-        "-=0.5"
-      )
-      // Apparition de code après circleCode
-      .fromTo(code, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0 }, ">0.1")
-      // À la fin de l'apparition de la ligne, apparition de cercleLight et light
-      .fromTo(
-        cercleLight,
-        { autoAlpha: 0, scale: 0 },
-        { autoAlpha: 1, scale: 1 },
-        "-=0.5"
-      )
-      .fromTo(light, { autoAlpha: 0 }, { autoAlpha: 1, stagger: 0.1 }, ">0.1");
   }, []);
 
   return (
-    <svg viewBox="0 0 416 361" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className="dessinProcess"
+      viewBox="0 0 416 361"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <circle className="cercleOne" cx="132" cy="132" r="132" fill="#8EA8D8" />
       <ellipse
         className="cercleTwo"
