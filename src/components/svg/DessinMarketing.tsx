@@ -10,55 +10,55 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DessinMarketing = () => {
   useEffect(() => {
-    const lign = document.querySelector(".lign");
-    const cercle = document.querySelector(".cercleStar");
-    const star = document.querySelector(".star");
+    const lignMarketing = document.querySelector(".lignMarketing");
+    const cercleMarketing = document.querySelector(".cercleStarMarketing");
+    const starMarketing = document.querySelector(".starMarketing");
 
-    const tl = gsap.timeline({
-      defaults: { duration: 0.7, ease: "easeOut" },
-      // Décommentez pour activer le ScrollTrigger
-      scrollTrigger: {
-        trigger: ".lign",
-        start: "top 80%",
-        end: "top 50%",
-        // scrub: true,
-        // markers: true,
-      },
-    });
-
-    // Animation de la ligne
-    if (lign) {
-      const lignLength = (lign as SVGPathElement).getTotalLength();
-      gsap.set(lign, {
-        strokeDasharray: lignLength,
-        strokeDashoffset: lignLength,
+    if (lignMarketing && cercleMarketing && starMarketing) {
+      const tl = gsap.timeline({
+        defaults: { duration: 0.7, ease: "easeOut" },
+        scrollTrigger: {
+          trigger: ".lignMarketing", // Assurez-vous que cela correspond à un élément existant
+          start: "top 80%",
+          end: "top 50%",
+          // markers: true, // Utile pour le débogage
+        },
       });
 
-      tl.fromTo(
-        lign,
-        { strokeDashoffset: lignLength },
-        { strokeDashoffset: 0 }
-      );
-    }
+      // Animation de la ligne
+      if (lignMarketing) {
+        const lignLength = (lignMarketing as SVGPathElement).getTotalLength();
+        gsap.set(lignMarketing, {
+          strokeDasharray: lignLength,
+          strokeDashoffset: lignLength,
+        });
 
-    // Animation du cercle
-    if (cercle) {
-      tl.fromTo(
-        cercle,
-        { scale: 0, autoAlpha: 0 },
-        { scale: 1, autoAlpha: 1 },
-        ">0.1"
-      );
-    }
+        tl.fromTo(
+          lignMarketing,
+          { strokeDashoffset: lignLength },
+          { strokeDashoffset: 0 }
+        );
+      }
 
-    // Animation de l'étoile
-    if (star) {
-      tl.fromTo(
-        star,
-        { scale: 0, autoAlpha: 0 },
-        { scale: 1, autoAlpha: 1 },
-        ">0.1"
-      );
+      // Animation du cercle
+      if (cercleMarketing) {
+        tl.fromTo(
+          cercleMarketing,
+          { scale: 0, autoAlpha: 0 },
+          { scale: 1, autoAlpha: 1 },
+          ">0.1"
+        );
+      }
+
+      // Animation de l'étoile
+      if (starMarketing) {
+        tl.fromTo(
+          starMarketing,
+          { scale: 0, autoAlpha: 0 },
+          { scale: 1, autoAlpha: 1 },
+          ">0.1"
+        );
+      }
     }
   }, []);
 
@@ -74,9 +74,9 @@ const DessinMarketing = () => {
         d="M2 98.5L55.5 54L80.5 79L140 26"
         stroke="#5174B4"
         stroke-width="5"
-        className="lign"
+        className="lignMarketing"
       />
-      <g filter="url(#filter0_di_471_32)" className="cercleStar">
+      <g filter="url(#filter0_di_471_32)" className="cercleStarMarketing">
         <rect
           x="113"
           y="2"
@@ -98,7 +98,7 @@ const DessinMarketing = () => {
       <path
         d="M140 8L144.939 23.2016H160.923L147.992 32.5967L152.931 47.7984L140 38.4033L127.069 47.7984L132.008 32.5967L119.077 23.2016H135.061L140 8Z"
         fill="#FFF848"
-        className="star"
+        className="starMarketing"
       />
       <defs>
         <filter
