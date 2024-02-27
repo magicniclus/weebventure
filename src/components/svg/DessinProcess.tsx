@@ -22,13 +22,12 @@ const DessinProcess = () => {
     const tl = gsap.timeline({
       defaults: { duration: 0.7, ease: "easeOut" },
       // Décommentez pour activer le ScrollTrigger
-      // scrollTrigger: {
-      //   trigger: pouceRef.current,
-      //   start: "top 80%",
-      //   end: "top 50%",
-      //   scrub: true,
-      //   markers: true,
-      // },
+      scrollTrigger: {
+        trigger: light,
+        start: "top 80%",
+        end: "top 50%",
+        // markers: true,
+      },
     });
 
     // Initialisation : Rendre la ligne invisible avant l'animation
@@ -82,13 +81,7 @@ const DessinProcess = () => {
   }, []);
 
   return (
-    <svg
-      width="416"
-      height="361"
-      viewBox="0 0 416 361"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 416 361" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle className="cercleOne" cx="132" cy="132" r="132" fill="#8EA8D8" />
       <ellipse
         className="cercleTwo"
