@@ -379,11 +379,11 @@ const Hero = () => {
           animation: fillUpFromBottom 1.7s ease forwards 1.7s;
         }
       `}</style>
-      <div className="w-full relative bg-accentDev/10 pb-10">
+      <div className="w-full relative bg-accentDev/10 md:pb-10">
         <Nav />
-        <section className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col items-center">
+        <section className="max-w-5xl mx-auto md:px-2 md:py-4 pt-16 md:pt-0 flex justify-between md:flex-row flex-col items-center">
           {/* Section gauche */}
-          <div className="md:w-5/12 w-full">
+          <div className="md:w-5/12 w-full md:px-0 px-2">
             <div className="px-3 py-1 rounded-full border border-primaryDev text-primaryDev max-w-max text-[12px] md:mt-10 bg-primaryDev/5 vignette">
               Agence web design & développement web
             </div>
