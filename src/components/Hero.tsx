@@ -5,7 +5,6 @@ import Nav from "./Nav";
 import { Button } from "./ui/button";
 
 const Hero = () => {
-  const devImageRef = useRef(null);
   const imageRef = useRef(null);
   const ecommerceImageRef = useRef(null);
 
@@ -213,8 +212,10 @@ const Hero = () => {
             </div>
             <h1 className="text-textDev font-extrabold text-[36px] mt-10">
               Nous créons votre{" "}
-              <span className="text-highlight">outils Web.</span> Vous
-              développez votre activité.
+              <span className="text-highlight">outils Web.</span>{" "}
+              <span className="text-accentDev">
+                Vous développez votre activité.
+              </span>
             </h1>
             <p className="text-[12px] w-10/12 mt-3">
               Nos experts optimisent votre acquisition en développement vos
