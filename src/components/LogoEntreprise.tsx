@@ -1,6 +1,34 @@
 import Image from "next/image";
+import { useEffect } from "react";
+
+import gsap from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const LogoEntreprise = () => {
+  useEffect(() => {
+    const logoContainerGlobal = document.querySelector(
+      ".logo-container-global"
+    );
+
+    const tl = gsap.timeline({
+      defaults: { duration: 0.7, ease: "easeOut" },
+      scrollTrigger: {
+        trigger: logoContainerGlobal,
+        start: "top 90%",
+        end: "top 50%",
+        // markers: true,
+      },
+    });
+    tl.fromTo(
+      logoContainerGlobal,
+      { autoAlpha: 0, y: 50 },
+      { autoAlpha: 1, y: 0 }
+    );
+  }, []);
+
   const entreprisePath = [
     "/logos/terabois.jpg",
     "/logos/duval.jpg",
@@ -42,9 +70,9 @@ const LogoEntreprise = () => {
           height: auto;
         }
       `}</style>
-      <section className="w-full mt-24">
-        <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <div className="logo-container-one">
+      <section className="w-full mt-10 md:mt-24 overflow-hidden">
+        <div className="max-w-5xl mx-auto flex justify-between items-center  logo-container-global md:flex-nowrap">
+          <div className="logo-container-one logo-container">
             <Image
               src={entreprisePath[0]}
               width={69}
@@ -52,13 +80,13 @@ const LogoEntreprise = () => {
               alt="terabois"
             />
           </div>
-          <div className="logo-container-two">
+          <div className="logo-container-two logo-container">
             <Image src={entreprisePath[1]} width={76} height={52} alt="duval" />
           </div>
-          <div className="logo-container-three">
+          <div className="logo-container-three logo-container">
             <Image src={entreprisePath[2]} width={33} height={40} alt="acsd" />
           </div>
-          <div className="logo-container-four">
+          <div className="logo-container-four logo-container">
             <Image
               src={entreprisePath[3]}
               width={155}
@@ -66,7 +94,7 @@ const LogoEntreprise = () => {
               alt="signature"
             />
           </div>
-          <div className="logo-container-five">
+          <div className="logo-container-five logo-container">
             <Image
               src={entreprisePath[4]}
               width={109}
@@ -74,7 +102,7 @@ const LogoEntreprise = () => {
               alt="dutruch"
             />
           </div>
-          <div className="logo-container-six">
+          <div className="logo-container-six logo-container">
             <Image
               src={entreprisePath[5]}
               width={51}
@@ -82,7 +110,7 @@ const LogoEntreprise = () => {
               alt="maprimerenov"
             />
           </div>
-          <div className="logo-container-seven">
+          <div className="logo-container-seven logo-container">
             <Image
               src={entreprisePath[6]}
               width={97}
