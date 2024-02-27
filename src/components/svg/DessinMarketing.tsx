@@ -17,13 +17,13 @@ const DessinMarketing = () => {
     const tl = gsap.timeline({
       defaults: { duration: 0.7, ease: "easeOut" },
       // Décommentez pour activer le ScrollTrigger
-      // scrollTrigger: {
-      //   trigger: pouceRef.current,
-      //   start: "top 80%",
-      //   end: "top 50%",
-      //   scrub: true,
-      //   markers: true,
-      // },
+      scrollTrigger: {
+        trigger: ".lign",
+        start: "top 80%",
+        end: "top 50%",
+        // scrub: true,
+        // markers: true,
+      },
     });
 
     // Animation de la ligne
