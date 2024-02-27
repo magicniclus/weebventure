@@ -19,17 +19,17 @@ const DessinOne = () => {
     const tl = gsap.timeline({
       defaults: { duration: 0.7, ease: "easeOut" },
       // Décommentez pour activer le ScrollTrigger
-      // scrollTrigger: {
-      //   trigger: pouceRef.current,
-      //   start: "top 80%",
-      //   end: "top 50%",
-      //   scrub: true,
-      //   markers: true,
-      // },
+      scrollTrigger: {
+        trigger: cercle,
+        start: "top 80%",
+        end: "top 50%",
+        // scrub: true,
+        // markers: true,
+      },
     });
 
     // Ajoute des animations à la timeline pour les cercles, pouces, nuages, et checks
-    tl.fromTo(cercle, { y: 100 }, { y: 0 })
+    tl.fromTo(cercle, { opacity: 0, y: 100 }, { opacity: 1, y: 0 })
       .fromTo(pouce, { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, "0.2")
       .fromTo(cloud, { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, "<")
       .fromTo(check, { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, "<")
@@ -66,13 +66,7 @@ const DessinOne = () => {
   }, []);
 
   return (
-    <svg
-      width="635"
-      height="630"
-      viewBox="0 0 635 630"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 635 630" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M93.9999 187.988C93.9999 185.226 96.2385 182.988 98.9999 182.988H529C531.761 182.988 534 185.226 534 187.988V436.988H93.9999V187.988Z"
         fill="#D9D9D9"
