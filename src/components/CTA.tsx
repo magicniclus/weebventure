@@ -46,7 +46,7 @@ const CTA = () => {
   }, []);
 
   return (
-    <section className="w-full md:mt-16">
+    <section className="w-full md:mt-16 overflow-hidden">
       <div className="max-w-5xl mx-auto py-4 md:px-4 px-2 md:bg-backgroundDev rounded-md p-3 flex md:items-center container items-start md:flex-row flex-col">
         <div className="md:w-[257px] h-[145px] hidden md:flex justify-center items-center bg-white rounded-md">
           <DessinMarketing />
