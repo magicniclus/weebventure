@@ -13,10 +13,6 @@ import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const FAQ = () => {
-  const title = document.querySelector(".titleFAQ");
-  const text = document.querySelector(".textFAQ");
-  const button = document.querySelector(".buttonFAQ");
-
   useEffect(() => {
     const title = document.querySelector(".titleFAQ");
     const text = document.querySelector(".textFAQ");
@@ -27,7 +23,7 @@ const FAQ = () => {
       const tl = gsap.timeline({
         defaults: { duration: 0.7, ease: "easeOut" },
         scrollTrigger: {
-          trigger: button,
+          trigger: title,
           start: "top 80%",
           end: "top 50%",
           // markers: true,
