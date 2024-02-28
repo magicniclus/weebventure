@@ -9,29 +9,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 const Techno = () => {
   useEffect(() => {
-    document.querySelectorAll(".logo-container-techno").forEach((element) => {
-      gsap.fromTo(
-        element,
-        { autoAlpha: 0, y: 150 },
-        {
-          scrollTrigger: {
-            trigger: element,
-            start: "top 90%",
-            end: "top 50%",
-            // markers: true,
-          },
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.7,
-          ease: "easeOut",
-        }
-      );
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".containerTechno",
+        start: "top 90%",
+        end: "top 50%",
+        // markers: true,
+      },
     });
+    tl.fromTo(
+      ".logo-container-techno",
+      { autoAlpha: 0, y: 150 },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.7,
+        ease: "easeOut",
+      }
+    );
   }, []);
+
   return (
-    <section className="w-full md:mt-14">
+    <section className="w-full md:mt-14 containerTechno">
       <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between flex-col items-center">
-        <h2 className="text-textDev font-extrabold text-[36px] mt-10 titleLeftText mx-auto">
+        <h2 className="text-textDev font-extrabold  text-[24px] mt-10 titleLeftText mx-auto">
           Nos technologies
         </h2>
         <div className="max-w-3xl flex-col w-full mx-auto md:flex hidden justify-between items-center logo-container-global md:flex-nowrap">
@@ -78,7 +79,7 @@ const Techno = () => {
             </div>
           </div>
           <div className="w-full flex justify-between items-center mt-7">
-            <div className="logo-container-one  logo-container-techno">
+            <div className="logo-container-one  logo-container-techno-Two">
               <Image
                 src="/logos/tailwind.png"
                 width={117}
@@ -86,7 +87,7 @@ const Techno = () => {
                 alt="tailwind"
               />
             </div>
-            <div className="logo-container-techno-one logo-container-techno">
+            <div className="logo-container-techno-one logo-container-techno-two">
               <Image
                 src="/logos/symfony.png"
                 width={36}
@@ -94,7 +95,7 @@ const Techno = () => {
                 alt="symfony"
               />
             </div>
-            <div className="logo-container-one-techno logo-container-techno">
+            <div className="logo-container-one-techno logo-container-techno-two">
               <Image
                 src="/logos/firebase.png"
                 width={202.5}
@@ -102,7 +103,7 @@ const Techno = () => {
                 alt="firebase"
               />
             </div>
-            <div className="logo-container-one  logo-container-techno">
+            <div className="logo-container-one  logo-container-techno-two">
               <Image
                 src="/logos/google.png"
                 width={37}
