@@ -36,7 +36,7 @@ const Realisations = () => {
     );
   }, []);
   return (
-    <section className="w-full md:mt-14 containerTarget">
+    <section className="w-full md:mt-14 containerTarget overflow-hidden">
       <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between flex-col flex-col items-center">
         <h2 className="text-textDev mx-auto font-extrabold text-[36px] mt-10 titleLeftText">
           Nos dernières réalisations
