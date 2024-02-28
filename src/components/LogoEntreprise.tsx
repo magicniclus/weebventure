@@ -71,7 +71,7 @@ const LogoEntreprise = () => {
         }
       `}</style>
       <section className="w-full mt-10 md:mt-24 overflow-hidden">
-        <div className="max-w-5xl mx-auto flex justify-between items-center  logo-container-global md:flex-nowrap">
+        <div className="max-w-5xl mx-auto md:flex hidden justify-between items-center logo-container-global md:flex-nowrap">
           <div className="logo-container-one logo-container">
             <Image
               src={entreprisePath[0]}
@@ -119,6 +119,7 @@ const LogoEntreprise = () => {
             />
           </div>
         </div>
+        <div className="md:hidden flex"></div>
       </section>
     </>
   );
