@@ -57,7 +57,12 @@ const RightTextContainer = () => {
         { autoAlpha: 1, y: 0 },
         "<"
       )
-      .fromTo(nameRightText, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0 });
+      .fromTo(
+        nameRightText,
+        { autoAlpha: 0, y: 50 },
+        { autoAlpha: 1, y: 0 },
+        "<"
+      );
     // Utilise la fonction then pour attendre que la timeline soit complète
 
     // Répétez pour d'autres éléments si nécessaire
