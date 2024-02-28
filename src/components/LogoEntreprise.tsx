@@ -27,9 +27,9 @@ const LogoEntreprise = () => {
       defaults: { duration: 0.7, ease: "easeOut" },
       scrollTrigger: {
         trigger: logoContainerGlobal,
-        start: "top 90%",
+        start: "top 80%",
         end: "top 50%",
-        // markers: true,
+        markers: true,
       },
     });
     tl.fromTo(
