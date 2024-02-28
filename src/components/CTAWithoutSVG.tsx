@@ -56,7 +56,7 @@ const CTAWithoutSVG = () => {
   }, []);
 
   return (
-    <section className="w-full md:mt-16 topSection">
+    <section className="w-full md:mt-16 topSection overflow-hidden">
       <div className="max-w-5xl mx-auto py-4 md:px-4 px-2 md:bg-backgroundDev rounded-md p-3 flex md:items-center container items-start md:flex-row flex-col">
         <div className="w-full flex justify-between md:items-center items-start md:px-4 md:flex-row flex-col mt-5">
           <div className="text-textDev">
