@@ -51,9 +51,9 @@ const CTA = () => {
         <div className="md:w-[257px] h-[145px] hidden md:flex justify-center items-center bg-white rounded-md">
           <DessinMarketing />
         </div>
-        <div className="w-full flex justify-between md:items-center items-start md:px-4 md:flex-row flex-col mt-5">
+        <div className="w-full flex justify-between md:items-center items-start md:px-4 md:flex-row flex-col">
           <div className="text-textDev">
-            <h2 className="text-textDev text-[24px] font-extrabold titleCTA mt-5">
+            <h2 className="text-textDev text-[24px] font-extrabold titleCTA">
               Vous souhaitez un accompagnement marketing ?
             </h2>
             <p className="md:w-9/12 text-[14px] sustitleCTA mt-3">
