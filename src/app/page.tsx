@@ -4,6 +4,7 @@ import CTA from "@/components/CTA";
 import Hero from "@/components/Hero";
 import LeftTextContainer from "@/components/LeftTextContainer";
 import LogoEntreprise from "@/components/LogoEntreprise";
+import Realisations from "@/components/Realisations";
 import RightTextContainer from "@/components/RightTextContainer";
 import Techno from "@/components/Techno";
 import Logo from "@/components/svg/Logo";
@@ -34,6 +35,7 @@ export default function Home() {
         <LeftTextContainer />
         <RightTextContainer />
         <Techno />
+        <Realisations />
       </main>
     </>
   );
