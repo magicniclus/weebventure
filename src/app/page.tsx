@@ -1,6 +1,8 @@
 "use client";
 
 import CTA from "@/components/CTA";
+import CTAWithoutSVG from "@/components/CTAWithoutSVG";
+import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import LeftTextContainer from "@/components/LeftTextContainer";
 import LogoEntreprise from "@/components/LogoEntreprise";
@@ -36,6 +38,8 @@ export default function Home() {
         <RightTextContainer />
         <Techno />
         <Realisations />
+        <FAQ />
+        <CTAWithoutSVG />
       </main>
     </>
   );
