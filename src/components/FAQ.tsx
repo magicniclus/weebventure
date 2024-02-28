@@ -30,7 +30,7 @@ const FAQ = () => {
           trigger: button,
           start: "top 80%",
           end: "top 50%",
-          markers: true,
+          // markers: true,
         },
       });
 
