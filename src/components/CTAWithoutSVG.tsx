@@ -32,24 +32,24 @@ const CTAWithoutSVG = () => {
     tl.add(
       gsap.fromTo(
         titleCTAWithoutSVG,
-        { autoAlpha: 0, y: 50 },
-        { autoAlpha: 1, y: 0 }
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0 }
       ),
       0
     )
       .add(
         gsap.fromTo(
           sustitleCTAWithoutSVG,
-          { autoAlpha: 0, y: 50 },
-          { autoAlpha: 1, y: 0 }
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0 }
         ),
         0.2
       )
       .add(
         gsap.fromTo(
           buttonCTAWithoutSVG,
-          { autoAlpha: 0, y: 50 },
-          { autoAlpha: 1, y: 0 }
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0 }
         ),
         0.2
       );
