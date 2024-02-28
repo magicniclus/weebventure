@@ -1,5 +1,14 @@
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+
+import Autoplay from "embla-carousel-autoplay";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/littleCard";
 
 import gsap from "gsap";
 
@@ -8,6 +17,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const LogoEntreprise = () => {
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
   useEffect(() => {
     const logoContainerGlobal = document.querySelector(
       ".logo-container-global"
@@ -119,7 +129,28 @@ const LogoEntreprise = () => {
             />
           </div>
         </div>
-        <div className="md:hidden flex"></div>
+        <div className="max-w-5xl mx-auto md:hidden flex justify-center">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full max-w-xs"
+            // onMouseEnter={plugin.current.stop}
+            // onMouseLeave={plugin.current.reset}
+          >
+            <CarouselContent>
+              {entreprisePath.map((path, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                        <img src={path} alt={`Logo ${index + 1}`} />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
       </section>
     </>
   );
