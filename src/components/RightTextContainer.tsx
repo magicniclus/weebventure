@@ -76,7 +76,7 @@ const RightTextContainer = () => {
           </div>
         </div>
         <div className="md:w-6/12 w-full">
-          <h2 className="text-textDev font-extrabold text-[36px] md:mt-10 titleRightText">
+          <h2 className="text-textDev font-extrabold  text-[24px] md:mt-10 titleRightText">
             Un panel de service complet
           </h2>
           <p className="text-[12px] w-10/12 mt-5 textRightText">
@@ -89,7 +89,7 @@ const RightTextContainer = () => {
             On en parle
           </Button>
           <div className="mt-7 p-4 shadow-xl overflow-hidden">
-            <div className="imageLeftText">
+            <div className="imageRightText">
               <Image
                 src="/logos/avenue-immo.jpg"
                 width={69}
