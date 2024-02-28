@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -142,6 +144,7 @@ const LogoEntreprise = () => {
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex items-center justify-center p-6">
+                        // eslint-disable-next-line @next/next/no-img-element
                         <img src={path} alt={`Logo ${index + 1}`} />
                       </CardContent>
                     </Card>
