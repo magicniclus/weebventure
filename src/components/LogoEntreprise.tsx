@@ -29,7 +29,7 @@ const LogoEntreprise = () => {
         trigger: logoContainerGlobal,
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        // markers: true,
       },
     });
     tl.fromTo(
