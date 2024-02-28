@@ -60,7 +60,7 @@ const LeftTextContainer = () => {
   }, []);
 
   return (
-    <section className="w-full mt-14">
+    <section className="w-full md:mt-14">
       <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col items-center">
         <div className="md:w-6/12 w-full">
           <h2 className="text-textDev font-extrabold text-[36px] mt-10 titleLeftText">
