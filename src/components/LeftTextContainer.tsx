@@ -56,7 +56,12 @@ const LeftTextContainer = () => {
         { autoAlpha: 1, y: 0 },
         "<"
       )
-      .fromTo(nameLeftText, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0 });
+      .fromTo(
+        nameLeftText,
+        { autoAlpha: 0, y: 50 },
+        { autoAlpha: 1, y: 0 },
+        "<"
+      );
   }, []);
 
   return (
