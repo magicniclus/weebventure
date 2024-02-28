@@ -57,20 +57,10 @@ const RightTextContainer = () => {
         { autoAlpha: 1, y: 0 },
         "<"
       )
-      .fromTo(nameRightText, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0 })
-      // Utilise la fonction then pour attendre que la timeline soit complète
-      .then(() => {
-        // Placez ici la logique pour démarrer l'animation de type "yoyo"
-        // Par exemple, pour faire une animation yoyo sur le titre :
-        gsap.to(titleRightText, {
-          y: "-=10",
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          duration: 1.5,
-        });
-        // Répétez pour d'autres éléments si nécessaire
-      });
+      .fromTo(nameRightText, { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0 });
+    // Utilise la fonction then pour attendre que la timeline soit complète
+
+    // Répétez pour d'autres éléments si nécessaire
   }, []);
   return (
     <section className="w-full md:mt-16">
@@ -81,7 +71,7 @@ const RightTextContainer = () => {
           </div>
         </div>
         <div className="md:w-6/12 w-full">
-          <h2 className="text-textDev font-extrabold text-[36px] mt-10 titleRightText">
+          <h2 className="text-textDev font-extrabold text-[36px] md:mt-10 titleRightText">
             Un panel de service complet
           </h2>
           <p className="text-[12px] w-10/12 mt-5 textRightText">
