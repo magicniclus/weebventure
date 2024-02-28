@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import LeftTextContainer from "@/components/LeftTextContainer";
 import LogoEntreprise from "@/components/LogoEntreprise";
 import RightTextContainer from "@/components/RightTextContainer";
+import Techno from "@/components/Techno";
 import Logo from "@/components/svg/Logo";
 
 import { useState } from "react";
@@ -32,6 +33,7 @@ export default function Home() {
         <LogoEntreprise />
         <LeftTextContainer />
         <RightTextContainer />
+        <Techno />
       </main>
     </>
   );
