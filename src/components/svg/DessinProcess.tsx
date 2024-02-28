@@ -10,15 +10,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DessinProcess = () => {
   useEffect(() => {
-    // Sélection des éléments
     const code = document.querySelectorAll(".code");
     const lign = document.querySelector(".lign");
     const light = document.querySelectorAll(".light");
     const cercleLight = document.querySelector(".cercleLight");
     const circleCode = document.querySelector(".circleCode");
 
-    // Vérification si les éléments nécessaires existent
     if (lign && cercleLight && circleCode) {
+      const lign = document.querySelector(".lign") as SVGPathElement;
       const lignLength = lign.getTotalLength();
       gsap.set(lign, {
         strokeDasharray: lignLength,
@@ -30,13 +29,12 @@ const DessinProcess = () => {
         defaults: { duration: 0.7, ease: "easeOut" },
         scrollTrigger: {
           trigger: ".dessinProcess",
-          start: "top center",
+          start: "top 80%",
           end: "bottom center",
           toggleActions: "play none none none",
         },
       });
 
-      // Séquence d'animation initiale
       tl.fromTo(
         [cercleLight, circleCode],
         { autoAlpha: 0, scale: 0 },
@@ -53,28 +51,22 @@ const DessinProcess = () => {
           { autoAlpha: 1, y: 0, stagger: 0.1 },
           ">0.1"
         )
-        .fromTo(
-          light,
-          { autoAlpha: 0 },
-          { autoAlpha: 1, stagger: 0.1 },
-          ">0.1"
-        );
-
-      // Ajout de l'effet de lévitation à la fin
-      const targetsToHover = [code, cercleLight, circleCode, ...light];
-      targetsToHover.forEach((target) => {
-        gsap.to(target, {
-          y: "-=10",
-          repeat: -1,
-          yoyo: true,
-          ease: "sine.inOut",
-          duration: 1.5,
-          delay: tl.duration(), // Assure que l'effet de lévitation commence après la timeline principale
+        .fromTo(light, { autoAlpha: 0 }, { autoAlpha: 1, stagger: 0.1 }, ">0.1")
+        .add(() => {
+          // Utilisation de add() pour exécuter le code une fois que la timeline est terminée
+          // Démarre les animations de lévitation pour chaque élément
+          [...code, cercleLight, circleCode, ...light].forEach((target) => {
+            gsap.to(target, {
+              y: "-=10",
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+              duration: 1.5,
+            });
+          });
         });
-      });
     }
   }, []);
-
   return (
     <svg
       className="dessinProcess"
