@@ -80,7 +80,7 @@ const LogoEntreprise = () => {
           height: auto;
         }
       `}</style>
-      <section className="w-full mt-10 md:mt-24 overflow-hidden">
+      <section className="w-full mt-10 md:mt-24 overflow-hidden overflow-hidden">
         <div className="max-w-5xl mx-auto md:flex hidden justify-between items-center logo-container-global md:flex-nowrap">
           <div className="logo-container-one logo-container">
             <Image
