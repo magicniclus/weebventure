@@ -1,6 +1,33 @@
+import { useEffect } from "react";
+
 import Image from "next/image";
 
+import gsap from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 const Techno = () => {
+  useEffect(() => {
+    document.querySelectorAll(".logo-container-techno").forEach((element) => {
+      gsap.fromTo(
+        element,
+        { autoAlpha: 0, y: 150 },
+        {
+          scrollTrigger: {
+            trigger: element,
+            start: "top 90%",
+            end: "top 50%",
+            // markers: true,
+          },
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "easeOut",
+        }
+      );
+    });
+  }, []);
   return (
     <section className="w-full md:mt-14">
       <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between flex-col items-center">
@@ -9,7 +36,7 @@ const Techno = () => {
         </h2>
         <div className="max-w-3xl flex-col w-full mx-auto md:flex hidden justify-between items-center logo-container-global md:flex-nowrap">
           <div className="w-full flex justify-between items-center mt-10">
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one-techno logo-container-techno">
               <Image
                 src="/logos/next.png"
                 width={45.5}
@@ -17,7 +44,7 @@ const Techno = () => {
                 alt="next"
               />
             </div>
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one-techno logo-container-techno">
               <Image
                 src="/logos/react.png"
                 width={45.5}
@@ -25,7 +52,7 @@ const Techno = () => {
                 alt="react"
               />
             </div>
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one-techno logo-container-techno">
               <Image
                 src="/logos/strapi.png"
                 width={140}
@@ -33,7 +60,7 @@ const Techno = () => {
                 alt="strapi"
               />
             </div>
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one-techno logo-container-techno">
               <Image
                 src="/logos/shopify.png"
                 width={127}
@@ -41,7 +68,7 @@ const Techno = () => {
                 alt="shopify"
               />
             </div>
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one-techno logo-container-techno">
               <Image
                 src="/logos/wordpress.png"
                 width={45.5}
@@ -51,7 +78,7 @@ const Techno = () => {
             </div>
           </div>
           <div className="w-full flex justify-between items-center mt-7">
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one  logo-container-techno">
               <Image
                 src="/logos/tailwind.png"
                 width={117}
@@ -59,7 +86,7 @@ const Techno = () => {
                 alt="tailwind"
               />
             </div>
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-techno-one logo-container-techno">
               <Image
                 src="/logos/symfony.png"
                 width={36}
@@ -67,7 +94,7 @@ const Techno = () => {
                 alt="symfony"
               />
             </div>
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one-techno logo-container-techno">
               <Image
                 src="/logos/firebase.png"
                 width={202.5}
@@ -75,7 +102,7 @@ const Techno = () => {
                 alt="firebase"
               />
             </div>
-            <div className="logo-container-one logo-container">
+            <div className="logo-container-one  logo-container-techno">
               <Image
                 src="/logos/google.png"
                 width={37}
