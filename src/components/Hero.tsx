@@ -278,7 +278,7 @@ const Hero = () => {
         .vertical-text {
           position: absolute;
           bottom: 10px;
-          right: 30px;
+          right: 10px;
           writing-mode: vertical-lr;
           transform: translateX(100%);
           white-space: nowrap;
@@ -287,6 +287,7 @@ const Hero = () => {
           transition: transform 0.3s ease;
           opacity: 0;
         }
+
         .lignRight:hover .vertical-text {
           transform: translateX(100%);
           color: #f7f8fb;
