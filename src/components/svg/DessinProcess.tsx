@@ -45,13 +45,8 @@ const DessinProcess = () => {
           { strokeDashoffset: lignLength },
           { strokeDashoffset: 0, autoAlpha: 1, duration: 1, ease: "power2.out" }
         )
-        .fromTo(
-          code,
-          { autoAlpha: 0, y: 20 },
-          { autoAlpha: 1, y: 0, stagger: 0.1 },
-          ">0.1"
-        )
-        .fromTo(light, { autoAlpha: 0 }, { autoAlpha: 1, stagger: 0.1 }, ">0.1")
+        .fromTo(code, { autoAlpha: 0 }, { autoAlpha: 1, stagger: 0.1 }, ">0.1")
+        .fromTo(light, { autoAlpha: 0 }, { autoAlpha: 1, stagger: 0.1 }, "<")
         .add(() => {
           // Utilisation de add() pour exécuter le code une fois que la timeline est terminée
           // Démarre les animations de lévitation pour chaque élément
