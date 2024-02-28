@@ -25,7 +25,7 @@ const CTAWithoutSVG = () => {
         trigger: ".topSection",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        // markers: true,
       },
     });
 
