@@ -68,7 +68,7 @@ const LeftTextContainer = () => {
     <section className="w-full md:mt-14 overflow-hidden">
       <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col items-center">
         <div className="md:w-6/12 w-full">
-          <h2 className="text-textDev font-extrabold text-[36px] mt-10 titleLeftText">
+          <h2 className="text-textDev font-extrabold  text-[24px] mt-10 titleLeftText">
             Un service et un accompagnement unique
           </h2>
           <p className="text-[12px] w-10/12 mt-5 textLeftText">
