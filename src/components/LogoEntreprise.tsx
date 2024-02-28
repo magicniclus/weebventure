@@ -141,7 +141,7 @@ const LogoEntreprise = () => {
                 <CarouselItem key={index}>
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <CardContent className="flex items-center justify-center p-6">
                         <img src={path} alt={`Logo ${index + 1}`} />
                       </CardContent>
                     </Card>
