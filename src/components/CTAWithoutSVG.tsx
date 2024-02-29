@@ -2,10 +2,9 @@
 
 import { useEffect } from "react";
 
-import { Button } from "./ui/button";
-
 import gsap from "gsap";
 
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -69,7 +68,13 @@ const CTAWithoutSVG = () => {
             </p>
           </div>
           <div className="buttonCTAWithoutSVG mt-3">
-            <Button variant={"perso"}>Adsventure</Button>
+            <a
+              href="/contact"
+              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 "
+            >
+              On en parle
+              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+            </a>
           </div>
         </div>
       </div>
