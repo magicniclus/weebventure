@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-slate-500 mt-16">
       <div className="max-w-5xl mx-auto py-20 px-2 flex justify-between flex-col items-center text-white">
-        <div className="w-full flex justify-between">
+        <div className="w-full flex justify-between md:flex-row flex-col">
           <div className="">
             <h2 className="text-[20px] font-extrabold">Le groupe</h2>
             <div className="flex flex-col">
@@ -34,7 +34,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="flex">
+          <div className="flex md:mt-0 mt-7 md:flex-row flex-col">
             <div className="">
               <h2 className="text-[20px] font-extrabold">Légales</h2>
               <ul className="mt-7">
@@ -46,7 +46,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="ml-7">
+            <div className="md:ml-7 md:mt-0 mt-7">
               <h2 className="text-[20px] font-extrabold">Agence</h2>
               <ul className="mt-7">
                 <li className="mt-2">
@@ -68,7 +68,7 @@ const Footer = () => {
             contact@webventure-agency.fr
           </a>
         </div>
-        <div className="w-full flex justify-between mt-16">
+        <div className="w-full flex justify-between mt-16 md:flex-row flex-col">
           <div className="flex flex-col">
             <Image
               src="/logos/webventure.png"
@@ -80,15 +80,15 @@ const Footer = () => {
               © 2024 webventure.fr, Inc. Tous droit réservé.
             </p>
           </div>
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col md:items-end md:mt-0 mt-7">
             <h2 className="text-[20px] font-extrabold">New&apos;s letters</h2>
-            <form className="mt-4 flex flex-col items-end">
+            <form className="mt-4 flex flex-col md:items-end">
               <input
                 type="text"
                 placeholder="Votre adresse mail"
-                className="w-full border-white text-textDev p-2 rounded-md"
+                className="w-full border-white text-textDev p-2 rounded-md md:max-w-full max-w-[200px]"
               />
-              <button className="mt-4 bg-white text-slate-400 py-1 px-2 rounded-md">
+              <button className="mt-4 bg-white text-slate-400 py-1 px-2 rounded-md max-w-max">
                 S&apos;inscrire
               </button>
             </form>
