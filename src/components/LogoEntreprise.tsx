@@ -21,6 +21,8 @@ gsap.registerPlugin(ScrollTrigger);
 const LogoEntreprise = () => {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
   useEffect(() => {
+    // Initialisation des éléments avec gsap.set
+    gsap.set(".logo-container-global", { opacity: 0 });
     const logoContainerGlobal = document.querySelector(
       ".logo-container-global"
     );
