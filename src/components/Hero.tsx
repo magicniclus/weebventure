@@ -12,7 +12,7 @@ const Hero = () => {
     { name: "ECOMMERCE", path: "/background/ecommerce.jpg" },
     { name: "SITE VITRINE", path: "/background/vitrine.jpg" },
     { name: "LANDING PAGE", path: "/background/dev.jpg" },
-    { name: "SIMULATEURS", path: "/background/simulateur.jpg" },
+    { name: "SIMULATEUR", path: "/background/simulateur.jpg" },
   ];
   const [hoverStates, setHoverStates] = useState(
     imageOptions.reduce((acc, item) => ({ ...acc, [item.name]: false }), {})
