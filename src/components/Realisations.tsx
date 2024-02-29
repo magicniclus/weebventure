@@ -22,9 +22,9 @@ const Realisations = () => {
       defaults: { duration: 0.7, ease: "easeOut" },
       scrollTrigger: {
         trigger: ".containerTarget",
-        start: "top 50%",
+        start: "top 80%",
         end: "top 50%",
-        // markers: true,
+        markers: true,
       },
     });
     tl.add(
