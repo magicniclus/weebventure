@@ -27,7 +27,7 @@ const Footer = () => {
               <a href="/" className="mt-0">
                 <Image
                   src="/logos/brendventure.png"
-                  width={170}
+                  width={160}
                   height={45}
                   alt="brendventure"
                 />
