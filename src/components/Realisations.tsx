@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-no-comment-textnodes */
 "use client";
 
 import { useEffect } from "react";
@@ -24,13 +26,13 @@ const Realisations = () => {
         trigger: ".containerTarget",
         start: "top 80%",
         end: "top 50%",
-        markers: true,
+        // markers: true,
       },
     });
     tl.add(
       gsap.fromTo(
         ".realisationContainer",
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 100 },
         { opacity: 1, y: 0 }
       )
     );
