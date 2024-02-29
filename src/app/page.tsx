@@ -12,10 +12,42 @@ import RightTextContainer from "@/components/RightTextContainer";
 import Techno from "@/components/Techno";
 import Logo from "@/components/svg/Logo";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Liste des chemins d'accès des images à précharger
+    const imagePaths = [
+      "/logos/logo.png",
+      "/logos/avenue-immo.jpg",
+      "/logos/dutruch.jpg",
+      "/logos/duval.jpg",
+      "/logos/maprimerenov.jpg",
+      "/logos/signature.jpg",
+      "/background/dev.jpg",
+      "/background/ecommerce.jpg",
+      "/background/simulateur.jpg",
+      "/background/vitrine.jpg",
+    ];
+
+    // Créez des promesses pour le chargement de chaque image
+    const imagePromises = imagePaths.map((path) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = path;
+        img.onload = resolve;
+      });
+    });
+
+    // Attendre le chargement de toutes les images
+    Promise.all(imagePromises).then(() => {
+      setTimeout(() => {
+        setIsLoading(false); // Toutes les images sont chargées, mettre fin au chargement
+      }, 1800);
+    });
+  }, []);
 
   if (isLoading) {
     return (
