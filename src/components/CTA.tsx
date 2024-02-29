@@ -17,6 +17,9 @@ const CTA = () => {
     const sustitleCTA = document.querySelector(".sustitleCTA");
     const buttonCTA = document.querySelector(".buttonCTA");
 
+    // Initialisation des éléments avec gsap.set
+    gsap.set([titleCTA, sustitleCTA, buttonCTA], { opacity: 0 });
+
     const tl = gsap.timeline({
       defaults: { duration: 0.7, ease: "easeOut" },
       scrollTrigger: {
