@@ -172,7 +172,7 @@ const Realisations = () => {
                 <div
                   key={value}
                   className={`w-2 h-2 rounded-full ${
-                    value - 1 === current ? "bg-slate-500" : "bg-slate-100"
+                    value - 1 === current - 1 ? "bg-slate-500" : "bg-slate-100"
                   } mx-1 transition duration-150 ease-in-out`}
                 ></div>
               ))}
