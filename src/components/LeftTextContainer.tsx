@@ -4,10 +4,10 @@ import { useEffect } from "react";
 
 import Image from "next/image";
 import DessinOne from "./svg/DessinOne";
-import { Button } from "./ui/button";
 
 import gsap from "gsap";
 
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -76,9 +76,15 @@ const LeftTextContainer = () => {
             accompagner, developper et optimiser votre idée. Nous devenons de
             véritable partenaire avec nos clients.{" "}
           </p>
-          <Button variant={"perso"} className="mt-7 buttonLeftText">
-            On en parle
-          </Button>
+          <div>
+            <a
+              href="/contact"
+              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 buttonLeftText"
+            >
+              Nous contacter{" "}
+              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+            </a>
+          </div>
           <div className="mt-7 p-4 shadow-xl overflow-hidden">
             <div className="imageLeftText">
               <Image
