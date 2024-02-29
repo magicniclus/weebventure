@@ -87,8 +87,8 @@ const LogoEntreprise = () => {
           <div className="logo-container-one logo-container">
             <Image
               src={entreprisePath[0]}
-              width={69}
-              height={39}
+              width={138}
+              height={78}
               alt="terabois"
             />
           </div>
@@ -117,8 +117,8 @@ const LogoEntreprise = () => {
           <div className="logo-container-six logo-container">
             <Image
               src={entreprisePath[5]}
-              width={51}
-              height={43}
+              width={102}
+              height={86}
               alt="maprimerenov"
             />
           </div>
