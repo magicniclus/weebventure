@@ -3,10 +3,10 @@
 import { useEffect } from "react";
 
 import Image from "next/image";
-import { Button } from "./ui/button";
 
 import gsap from "gsap";
 
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import DessinProcess from "./svg/DessinProcess";
 
@@ -85,9 +85,15 @@ const RightTextContainer = () => {
             utilisant votre CMS préféré, nos équipes s’adapte à vos besoins afin
             de vous proposer un service sur-mesure du design au développement.
           </p>
-          <Button variant={"perso"} className="mt-7 buttonRightText">
-            On en parle
-          </Button>
+          <div>
+            <a
+              href="/contact"
+              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 buttonRightText"
+            >
+              On en parle
+              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+            </a>
+          </div>
           <div className="mt-7 p-4 shadow-xl overflow-hidden">
             <div className="imageRightText">
               <Image
