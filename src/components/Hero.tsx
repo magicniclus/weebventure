@@ -1,8 +1,8 @@
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Nav from "./Nav";
-import { Button } from "./ui/button";
 
 const Hero = () => {
   const imageRef = useRef(null);
@@ -207,6 +207,7 @@ const Hero = () => {
       },
       {
         y: 0,
+        x: 0,
         opacity: 1,
         duration: 0.5,
         delay: 1.2,
@@ -230,6 +231,11 @@ const Hero = () => {
 
   useEffect(() => {
     animAllElements();
+    // Initialisation des éléments avec gsap.set
+    gsap.set(
+      ".vignette, .title, .text, .tagOne, .tagTwo, .tagThree, .button, .imageContainer, .lignContainer, .vertical-text, .lignRight::before",
+      { opacity: 0 }
+    );
   }, []);
 
   return (
@@ -389,8 +395,8 @@ const Hero = () => {
               Agence web design & développement web
             </div>
             <h1 className="text-textDev font-extrabold text-[36px] mt-10 title">
-              Nous créons votre{" "}
-              <span className="text-highlight">outils Web.</span>{" "}
+              Nous développons votre{" "}
+              <span className="text-highlight">outil Web.</span>{" "}
               <span className="text-accentDev">
                 Vous développez votre activité.
               </span>
@@ -411,11 +417,21 @@ const Hero = () => {
                 #MAINTENANCE
               </p>
             </div>
-            <div className="mt-10 button">
-              <Button variant="perso">Votre projet</Button>
-              <Button variant="persoSecondary" className="ml-3">
-                Projets récents
-              </Button>
+            <div className="mt-10 button flex">
+              <a
+                href="/contact"
+                className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max"
+              >
+                Votre projet{" "}
+                <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+              </a>
+              <a
+                href="#projects"
+                className="ml-3 flex items-center bg-transparent border border-primaryDev text-primaryDev py-2 px-4 rounded-full group max-w-max"
+              >
+                Projets récents{" "}
+                <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+              </a>
             </div>
           </div>
 
