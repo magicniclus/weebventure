@@ -38,7 +38,7 @@ const FAQ = () => {
 
   return (
     <section className="mt-20 w-full overflow-hidden">
-      <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between">
+      <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col">
         <div className="md:w-1/2 w-full">
           <h2 className="text-textDev font-extrabold text-[24px] mt-10 titleLeftText titleFAQ">
             F.A.Q
@@ -49,7 +49,7 @@ const FAQ = () => {
             véritable partenaire avec nos clients.{" "}
           </p>
         </div>
-        <div className="md:w-1/2 w-full buttonFAQ">
+        <div className="md:w-1/2 w-full buttonFAQ md:mt-0 mt-7">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
