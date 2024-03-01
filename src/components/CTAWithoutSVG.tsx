@@ -2,9 +2,10 @@
 
 import { useEffect } from "react";
 
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
+
 import gsap from "gsap";
 
-import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
