@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import DessinMarketing from "./svg/DessinMarketing";
-import { Button } from "./ui/button";
 
 import gsap from "gsap";
 
@@ -65,7 +65,14 @@ const CTA = () => {
             </p>
           </div>
           <div className="buttonCTA mt-3">
-            <Button variant={"perso"}>Adsventure</Button>
+            <a
+              href="https://www.adsventure-agency.com/"
+              target="_blank"
+              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 "
+            >
+              Adventure
+              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+            </a>
           </div>
         </div>
       </div>
