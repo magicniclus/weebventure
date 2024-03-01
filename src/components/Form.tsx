@@ -61,7 +61,7 @@ const Form = () => {
         ...prevFormData,
         souhaits: {
           ...prevFormData.souhaits,
-          [name]: value, // Ici, value est déjà correctement défini comme boolean pour les checkboxes
+          [name]: value,
         },
       }));
     } else {
@@ -128,7 +128,6 @@ const Form = () => {
           value={formData.fonction}
           onChange={handleChange}
         />
-        {/* Section des choix multiples */}
         <div className="mt-7">
           <h3 className="font-bold">
             Vous souhaitez{" "}
