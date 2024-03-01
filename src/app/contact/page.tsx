@@ -35,6 +35,9 @@ const Page = () => {
       { opacity: 0, y: 50 }
     );
     gsap.set(".lignOneForm, .lignTwoForm", { opacity: 0, x: -150 });
+  }, []);
+
+  useEffect(() => {
     const tl = gsap.timeline({
       defaults: { duration: 0.7, ease: "easeOut" },
       scrollTrigger: {
@@ -44,6 +47,7 @@ const Page = () => {
         // markers: true,
       },
     });
+    tl.add(gsap.to(".mainContact", { opacity: 1 }));
     tl.add(
       gsap.fromTo(".titleForm", { opacity: 0, y: 50 }, { opacity: 1, y: 0 }),
       0
@@ -210,7 +214,7 @@ const Page = () => {
         }
       `}</style>
       <Nav contact={false} />
-      <main className="w-full min-h-[calc(100vh-20px)]">
+      <main className="w-full min-h-[calc(100vh-20px)] opacity-0 mainContact">
         <div className="max-w-5xl mx-auto py-4 px-2 flex md:flex-row flex-col">
           <div className="mt-16 md:w-1/2 w-full md:pr-16">
             <h1 className="text-textDev text-[32px] font-extrabold titleForm">
