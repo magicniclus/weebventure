@@ -50,7 +50,12 @@ const DessinProcess = () => {
         .add(() => {
           // Utilisation de add() pour exécuter le code une fois que la timeline est terminée
           // Démarre les animations de lévitation pour chaque élément
-          [...code, cercleLight, circleCode, ...light].forEach((target) => {
+          [
+            ...Array.from(code),
+            cercleLight,
+            circleCode,
+            ...Array.from(light),
+          ].forEach((target) => {
             gsap.to(target, {
               y: "-=10",
               repeat: -1,
