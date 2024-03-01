@@ -10,14 +10,15 @@ const BackgroundHero = () => {
     const mask = maskRef.current;
 
     if (svg && mask) {
-      const svgHeight = svg.viewBox.baseVal.height; // Utilisez la hauteur définie dans le viewBox du SVG
+      const svgElement = svg as SVGSVGElement; // Cast svgRef.current to SVGSVGElement
+      const svgHeight = svgElement.viewBox.baseVal.height; // Utilize the height defined in the viewBox of the SVG
 
-      // Initialisez le masque pour commencer depuis le haut et ne rien révéler
+      // Initialize the mask to start from the top and reveal nothing
       gsap.set(mask, { attr: { height: 0, y: 0 } });
 
-      // Animez le masque pour révéler le SVG de haut en bas
+      // Animate the mask to reveal the SVG from top to bottom
       gsap.to(mask, {
-        attr: { height: svgHeight, y: 0 }, // Assurez-vous que le masque couvre entièrement le SVG à la fin
+        attr: { height: svgHeight, y: 0 }, // Make sure the mask fully covers the SVG at the end
         duration: 1,
         ease: "power2.inOut",
         onComplete: () => console.log("Animation completed!"),
