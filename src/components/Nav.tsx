@@ -8,6 +8,12 @@ import { useEffect } from "react";
 const Nav = ({ contact = true }) => {
   useEffect(() => {
     gsap.set("header", { y: -100, opacity: 0 });
+    gsap.to("mainNav", {
+      opacity: 1,
+      duration: 0.5,
+      delay: 1.2,
+      ease: "power4.out",
+    });
     gsap.fromTo(
       "header",
       {
@@ -24,7 +30,7 @@ const Nav = ({ contact = true }) => {
     );
   }, []);
   return (
-    <header className="max-w-5xl mx-auto py-4 px-2 flex justify-between">
+    <header className="max-w-5xl mx-auto py-4 px-2 flex justify-between opacity-0 mainNav">
       <div className="flex items-center">
         <a href="/">
           <img
