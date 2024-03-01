@@ -1,6 +1,11 @@
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import { addProspect } from "../firebase/dataManager";
+
 const Form = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     nom: "",
     prenom: "",
@@ -8,13 +13,13 @@ const Form = () => {
     email: "",
     siteWeb: "",
     fonction: "",
+    budget: "",
+    projet: "",
     souhaits: {
       developpement: false,
       design: false,
       refonte: false,
     },
-    budget: "",
-    projet: "",
   });
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
@@ -72,8 +77,50 @@ const Form = () => {
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    // Convertit les souhaits sélectionnés en une chaîne pour l'email
+    const souhaitsPourEmail = Object.entries(formData.souhaits)
+      .filter(([_, value]) => value)
+      .map(([key, _]) => key.charAt(0).toUpperCase() + key.slice(1))
+      .join(", ");
+
+    try {
+      // Ici, nous passons l'objet souhaits directement, comme attendu par votre fonction addProspect
+      await addProspect({
+        ...formData,
+        site: formData.siteWeb, // Assurez-vous que ceci correspond à votre modèle de données
+        souhaits: formData.souhaits, // Passez l'objet directement
+      });
+
+      // Préparation de la requête pour envoyer l'email
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          site: formData.siteWeb, // Inclut le champ 'site'
+          souhaits: souhaitsPourEmail, // Utilisez la chaîne des souhaits pour l'email
+          date: new Date().toLocaleString(),
+        }),
+      });
+
+      if (!response.ok)
+        throw new Error(
+          "Une erreur est survenue lors de la soumission du formulaire."
+        );
+
+      console.log("API Response:", await response.json());
+      // Redirection à la page de remerciement
+      router.push("/contact/merci");
+    } catch (error) {
+      console.error("Erreur lors de la soumission :", error);
+    }
+  };
+
   return (
-    <form className="p-10 bg-slate-100">
+    <form className="p-10 bg-slate-100" onSubmit={handleSubmit}>
       <h2 className="text-textDev font-extrabold text-[24px] titleLeftText mx-auto">
         Contactez-nous <span></span>
       </h2>
@@ -178,7 +225,7 @@ const Form = () => {
           onChange={handleChange}
         >
           <option value="" disabled>
-            Quel est votre budget ?
+            Quel est votre budget ?*
           </option>
           <option value="-3000€">-3000€</option>
           <option value="3000€ à 5000€">3000€ à 5000€</option>
