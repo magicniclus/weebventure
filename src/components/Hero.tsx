@@ -386,11 +386,11 @@ const Hero = () => {
           animation: fillUpFromBottom 1.7s ease forwards 1.7s;
         }
       `}</style>
-      <div className="w-full relative bg-accentDev/10 md:pb-10">
+      <div className="relative w-full bg-accentDev/10 md:pb-10">
         <Nav />
-        <section className="max-w-5xl mx-auto md:px-2 md:py-4 pt-16 md:pt-0 flex justify-between md:flex-row flex-col items-center">
+        <section className="flex flex-col items-center justify-between max-w-5xl pt-16 mx-auto md:px-2 md:py-4 md:pt-0 md:flex-row">
           {/* Section gauche */}
-          <div className="md:w-5/12 w-full md:px-0 px-2">
+          <div className="w-full px-2 md:w-5/12 md:px-0">
             <div className="px-3 py-1 rounded-full border border-primaryDev text-primaryDev max-w-max text-[12px] md:mt-10 bg-primaryDev/5 vignette">
               Agence web design & développement web
             </div>
@@ -402,35 +402,34 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-[12px] w-10/12 mt-3 text">
-              Nos experts optimisent votre acquisition en développement vos
-              outils web et marketing afin de trouver les meilleurs leviers de
-              croissance.
+              Nos spécialistes transforment vos idées en réalité numérique, en
+              créant des outils web sur-mesure pour booster votre croissance.
             </p>
             <div className="text-[12px] flex mt-3">
-              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full tagOne">
+              <p className="p-1 px-2 rounded-full bg-primaryDev/20 max-w-max tagOne">
                 #DESIGN
               </p>
-              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full ml-3 tagTwo">
+              <p className="p-1 px-2 ml-3 rounded-full bg-primaryDev/20 max-w-max tagTwo">
                 #DEVELOPPEMENT
               </p>
-              <p className="p-1 px-2 bg-primaryDev/20 max-w-max rounded-full ml-3 tagThree">
+              <p className="p-1 px-2 ml-3 rounded-full bg-primaryDev/20 max-w-max tagThree">
                 #MAINTENANCE
               </p>
             </div>
-            <div className="mt-10 button flex">
+            <div className="flex mt-10 button">
               <a
                 href="/contact"
-                className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max"
+                className="flex items-center px-4 py-2 text-white rounded-full bg-primaryDev group max-w-max"
               >
                 Votre projet{" "}
-                <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+                <ArrowRightIcon className="w-4 h-auto transition duration-150 ease-in-out group-hover:translate-x-2" />
               </a>
               <a
                 href="#projects"
-                className="ml-3 flex items-center bg-transparent border border-primaryDev text-primaryDev py-2 px-4 rounded-full group max-w-max"
+                className="flex items-center px-4 py-2 ml-3 bg-transparent border rounded-full border-primaryDev text-primaryDev group max-w-max"
               >
                 Projets récents{" "}
-                <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+                <ArrowRightIcon className="w-4 h-auto transition duration-150 ease-in-out group-hover:translate-x-2" />
               </a>
             </div>
           </div>
@@ -462,7 +461,7 @@ const Hero = () => {
             </div>
             <div className="overlay-gradient imageContainer"></div>
             {/* Vos éléments de texte verticaux ici */}
-            <div className="absolute inset-0 flex justify-between items-end w-full">
+            <div className="absolute inset-0 flex items-end justify-between w-full">
               {imageOptions.map((item) => (
                 <div
                   key={item.name}
