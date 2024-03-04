@@ -23,7 +23,7 @@ export default function RootLayout({
         <link rel="icon" href="logos/favicon.png" sizes="any" />
       </head>
       <body className={inter.className}>{children}</body>
-      <GoogleTagManager gtmId="GTM-WZP4H2GF" />
+      <GoogleTagManager gtmId="GTM-5GNQ636R" />
     </html>
   );
 }
