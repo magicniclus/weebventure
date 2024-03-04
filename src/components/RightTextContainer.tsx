@@ -69,32 +69,35 @@ const RightTextContainer = () => {
   }, []);
   return (
     <section className="w-full md:mt-16">
-      <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col items-center">
-        <div className="md:w-6/12 md:flex hidden w-full">
+      <div className="flex flex-col items-center justify-between max-w-5xl px-2 py-4 mx-auto md:flex-row">
+        <div className="hidden w-full md:w-6/12 md:flex">
           <div className="w-[80%]">
             <DessinProcess />
           </div>
         </div>
-        <div className="md:w-6/12 w-full">
+        <div className="w-full md:w-6/12">
           <h2 className="text-textDev font-extrabold  text-[24px] md:mt-10 titleRightText">
-            Un panel de service complet
+            Une gamme complète de services adaptés à chaque projet
           </h2>
           <p className="text-[12px] w-10/12 mt-5 textRightText">
-            Nous travaillons aussi bien sur des site vitrine, des simulateur,
-            des sites ecommerces. Soit en partant de rien (from scratch) soit en
-            utilisant votre CMS préféré, nos équipes s’adapte à vos besoins afin
-            de vous proposer un service sur-mesure du design au développement.
+            Que vous envisagiez de lancer un site vitrine, un simulateur, ou une
+            plateforme e-commerce, nous sommes à votre écoute. Notre approche
+            flexible nous permet de développer votre projet soit entièrement à
+            partir de zéro, soit en reprenant et en optimisant un projet
+            existant. En privilégiant votre CMS favori ou en construisant sur
+            mesure, nos équipes s&apos;engagent à répondre précisément à vos
+            besoins avec un service personnalisé du design au développement.
           </p>
           <div>
             <a
               href="/contact"
-              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 buttonRightText"
+              className="flex items-center px-4 py-2 mt-5 text-white rounded-full bg-primaryDev group max-w-max buttonRightText"
             >
               On en parle
-              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+              <ArrowRightIcon className="w-4 h-auto transition duration-150 ease-in-out group-hover:translate-x-2" />
             </a>
           </div>
-          <div className="mt-7 p-4 shadow-xl overflow-hidden">
+          <div className="p-4 overflow-hidden shadow-xl mt-7">
             <div className="imageRightText">
               <Image
                 src="/logos/avenue-immo.jpg"
@@ -104,16 +107,17 @@ const RightTextContainer = () => {
               />
             </div>
             <p className="text-[10px] text-textDev/50 w-8/12 mt-5 commentaryRightText">
-              “Nous travaillons avec Webventure depuis 3 ans maintenant et
-              l’équipe est totalement en accord avec nos valeurs. Travail
-              réalisé dans les temps, team réactive, créative, super experience
-              client.
+              Collaborer avec Webventure, c&apos;était comme avoir une baguette
+              magique pour notre projet web : efficacité, créativité et soutien
+              sur mesure. Ils ont non seulement donné vie à notre site mais ont
+              aussi ajouté cette étincelle unique qui le distingue vraiment. Un
+              grand bravo à toute l&apos;équipe !
             </p>
             <p className="text-[12px] text-textDev font-bold w-10/12 mt-5 nameRightText">
               Pauline MASSE - Chargé de developpement Avenueimmo.com
             </p>
           </div>
-          <div className="md:w-6/12 flex md:hidden w-full mt-20 justify-center items-center">
+          <div className="flex items-center justify-center w-full mt-20 md:w-6/12 md:hidden">
             <div className="w-[80%]">
               <DessinProcess />
             </div>
