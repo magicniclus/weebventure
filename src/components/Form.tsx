@@ -220,7 +220,7 @@ const Form = () => {
         {/* Select pour le budget */}
         <select
           name="budget"
-          className="inputCTA mt-7 w-full px-3 py-2 text-textDev"
+          className="w-full px-3 py-2 inputCTA mt-7 text-textDev"
           value={formData.budget}
           onChange={handleChange}
         >
@@ -242,6 +242,7 @@ const Form = () => {
         ></textarea>
         <button
           type="submit"
+          id="submitButton"
           className={`btnCTA mt-7 w-full py-3 text-white ${
             !isSubmitDisabled ? "bg-primaryDev" : "bg-primaryDev/50"
           } rounded-md`}
