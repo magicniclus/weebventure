@@ -65,27 +65,28 @@ const LeftTextContainer = () => {
   }, []);
 
   return (
-    <section className="w-full md:mt-14 overflow-hidden">
-      <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col items-center">
-        <div className="md:w-6/12 w-full">
+    <section className="w-full overflow-hidden md:mt-14">
+      <div className="flex flex-col items-center justify-between max-w-5xl px-2 py-4 mx-auto md:flex-row">
+        <div className="w-full md:w-6/12">
           <h2 className="text-textDev font-extrabold  text-[24px] mt-10 titleLeftText">
-            Un service et un accompagnement unique
+            Un service et un accompagnement personnalisé
           </h2>
           <p className="text-[12px] w-10/12 mt-5 textLeftText">
-            Vous avez un projet web? Nous avons les compétences pour vous
-            accompagner, developper et optimiser votre idée. Nous devenons de
-            véritable partenaire avec nos clients.{" "}
+            Vous portez un projet web ? Nous possédons l&apos;expertise
+            nécessaire pour vous guider, développer et peaufiner votre concept.
+            Nous établissons une véritable relation de partenariat avec nos
+            clients.
           </p>
           <div>
             <a
               href="/contact"
-              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 buttonLeftText"
+              className="flex items-center px-4 py-2 mt-5 text-white rounded-full bg-primaryDev group max-w-max buttonLeftText"
             >
               Nous contacter{" "}
-              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+              <ArrowRightIcon className="w-4 h-auto transition duration-150 ease-in-out group-hover:translate-x-2" />
             </a>
           </div>
-          <div className="mt-7 p-4 shadow-xl overflow-hidden">
+          <div className="p-4 overflow-hidden shadow-xl mt-7">
             <div className="imageLeftText">
               <Image
                 src="/logos/terabois.jpg"
@@ -95,7 +96,7 @@ const LeftTextContainer = () => {
               />
             </div>
             <p className="text-[10px] text-textDev/50 w-8/12 mt-5 commentaryLeftText">
-              “Nous travaillons avec Webventure depuis 3 ans maintenant et
+              Nous travaillons avec Webventure depuis 3 ans maintenant et
               l’équipe est totalement en accord avec nos valeurs. Travail
               réalisé dans les temps, team réactive, créative, super experience
               client.
@@ -105,7 +106,7 @@ const LeftTextContainer = () => {
             </p>
           </div>
         </div>
-        <div className="md:w-6/12 w-full">
+        <div className="w-full md:w-6/12">
           <DessinOne />
         </div>
       </div>
