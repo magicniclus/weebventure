@@ -37,19 +37,22 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section className="md:mt-20 w-full overflow-hidden">
-      <div className="max-w-5xl mx-auto py-4 px-2 flex justify-between md:flex-row flex-col">
-        <div className="md:w-1/2 w-full">
+    <section className="w-full overflow-hidden md:mt-20">
+      <div className="flex flex-col justify-between max-w-5xl px-2 py-4 mx-auto md:flex-row">
+        <div className="w-full md:w-1/2">
           <h2 className="text-textDev font-extrabold text-[24px] mt-10 titleLeftText titleFAQ">
             F.A.Q
           </h2>
           <p className="text-[12px] w-10/12 mt-5 textFAQ">
-            Vous avez un projet web? Nous avons les compétences pour vous
-            accompagner, developper et optimiser votre idée. Nous devenons de
-            véritable partenaire avec nos clients.{" "}
+            Dans cette section FAQ, vous trouverez des réponses aux questions
+            les plus fréquemment posées sur nos services. Notre objectif est de
+            vous éclairer sur notre processus, de clarifier nos offres et de
+            vous aider à mieux comprendre comment nous pouvons transformer votre
+            projet web en succès. N&apos;hésitez pas à parcourir ces
+            informations pour découvrir comment nous travaillons à vos côtés.
           </p>
         </div>
-        <div className="md:w-1/2 w-full buttonFAQ md:mt-0 mt-7">
+        <div className="w-full md:w-1/2 buttonFAQ md:mt-0 mt-7">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger>
