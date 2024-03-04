@@ -73,7 +73,7 @@ const CTAWithoutSVG = () => {
           <div className="mt-3 buttonCTAWithoutSVG">
             <a
               href="/contact"
-              className="flex items-center px-4 py-2 mt-5 text-white rounded-full bg-primaryDev group min-w-min "
+              className="flex items-center px-4 py-2 mt-5 text-white rounded-full bg-primaryDev group  min-w-[145px]"
             >
               On en parle
               <ArrowRightIcon className="w-4 h-auto transition duration-150 ease-in-out group-hover:translate-x-2" />
