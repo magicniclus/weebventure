@@ -16,7 +16,7 @@ const Footer = () => {
                   alt="webventure"
                 />
               </a>
-              <a href="/" className="mt-2">
+              <a href="https://www.adsventure-agency.com/" className="mt-2">
                 <Image
                   src="/logos/AdsVenture.png"
                   width={123}
@@ -39,10 +39,12 @@ const Footer = () => {
               <h2 className="text-[20px] font-extrabold">Légales</h2>
               <ul className="mt-7">
                 <li className="mt-2">
-                  <a href="/">Mentions légales</a>
+                  <a href="/mentions-legales">Mentions légales</a>
                 </li>
                 <li className="mt-2">
-                  <a href="/">Politique de confidentialité</a>
+                  <a href="/politique-de-confidentialite">
+                    Politique de confidentialité
+                  </a>
                 </li>
               </ul>
             </div>
