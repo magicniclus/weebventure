@@ -37,7 +37,7 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section className="w-full overflow-hidden md:mt-20">
+    <section className="w-full overflow-hidden md:mt-20" id="FAQ">
       <div className="flex flex-col justify-between max-w-5xl px-2 py-4 mx-auto md:flex-row">
         <div className="w-full md:w-1/2">
           <h2 className="text-textDev font-extrabold text-[24px] mt-10 titleLeftText titleFAQ">
