@@ -49,29 +49,32 @@ const CTA = () => {
   }, []);
 
   return (
-    <section className="w-full md:mt-16 overflow-hidden">
-      <div className="max-w-5xl mx-auto py-4 md:px-4 px-2 md:bg-backgroundDev rounded-md p-3 flex md:items-center container items-start md:flex-row flex-col">
+    <section className="w-full overflow-hidden md:mt-16">
+      <div className="container flex flex-col items-start max-w-5xl p-3 px-2 py-4 mx-auto rounded-md md:px-4 md:bg-backgroundDev md:items-center md:flex-row">
         <div className="md:w-[257px] h-[145px] hidden md:flex justify-center items-center bg-white rounded-md">
           <DessinMarketing />
         </div>
-        <div className="w-full flex justify-between md:items-center items-start md:px-4 md:flex-row flex-col">
+        <div className="flex flex-col items-start justify-between w-full md:items-center md:px-4 md:flex-row">
           <div className="text-textDev">
-            <h2 className="text-textDev text-[24px] font-extrabold titleCTA">
+            <h2
+              className="text-textDev text-[24px] font-extrabold titleCTA"
+              style={{ width: "fit-content" }}
+            >
               Vous souhaitez un accompagnement marketing ?
             </h2>
             <p className="md:w-9/12 text-[14px] sustitleCTA mt-3">
-              Notre agence Adsventure spécialisé en marketing 100% digital peut
-              vous accompagner à atteindre vos objectifs.
+              Notre agence Adsventure, spécialisée en marketing 100% digital,
+              peut vous accompagner pour atteindre vos objectifs.
             </p>
           </div>
-          <div className="buttonCTA mt-3">
+          <div className="mt-3 buttonCTA">
             <a
               href="https://www.adsventure-agency.com/"
               target="_blank"
-              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 "
+              className="flex items-center px-4 py-2 mt-5 text-white rounded-full bg-primaryDev group min-w-[135px]"
             >
-              Adventure
-              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+              Adsventure
+              <ArrowRightIcon className="w-4 h-auto transition duration-150 ease-in-out group-hover:translate-x-2" />
             </a>
           </div>
         </div>
