@@ -56,25 +56,27 @@ const CTAWithoutSVG = () => {
   }, []);
 
   return (
-    <section className="w-full md:mt-16 topSection overflow-hidden">
-      <div className="max-w-5xl mx-auto py-10 md:px-4 px-2 md:bg-backgroundDev rounded-md p-3 flex md:items-center container items-start md:flex-row flex-col">
-        <div className="w-full flex justify-between md:items-center items-start md:px-4 md:flex-row flex-col">
+    <section className="w-full overflow-hidden md:mt-16 topSection">
+      <div className="container flex flex-col items-start max-w-5xl p-3 px-2 py-10 mx-auto rounded-md md:px-4 md:bg-backgroundDev md:items-center md:flex-row">
+        <div className="flex flex-col items-start justify-between w-full md:items-center md:px-4 md:flex-row">
           <div className="text-textDev">
             <h2 className="text-textDev text-[24px] font-extrabold titleCTAWithoutSVG">
-              Vous souhaitez un accompagnement marketing ?
+              Prêt à propulser votre projet ?
             </h2>
-            <p className="md:w-9/12 text-[14px] sustitleCTAWithoutSVG mt-3">
-              Notre agence Adsventure spécialisé en marketing 100% digital peut
-              vous accompagner à atteindre vos objectifs.
+            <p className="md:w-8/12 text-[14px] sustitleCTAWithoutSVG mt-3">
+              Chez Webventure, nous sommes dédiés à transformer vos idées en
+              réalités. Lancez-vous : prenez rendez-vous avec nous pour explorer
+              ensemble comment notre expertise en développement web peut faire
+              décoller votre projet.
             </p>
           </div>
-          <div className="buttonCTAWithoutSVG mt-3">
+          <div className="mt-3 buttonCTAWithoutSVG">
             <a
               href="/contact"
-              className="flex items-center text-white bg-primaryDev py-2 px-4 rounded-full group max-w-max mt-5 "
+              className="flex items-center px-4 py-2 mt-5 text-white rounded-full bg-primaryDev group min-w-min "
             >
               On en parle
-              <ArrowRightIcon className="w-4 h-auto group-hover:translate-x-2 transition duration-150 ease-in-out" />
+              <ArrowRightIcon className="w-4 h-auto transition duration-150 ease-in-out group-hover:translate-x-2" />
             </a>
           </div>
         </div>
