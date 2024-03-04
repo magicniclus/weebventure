@@ -65,7 +65,7 @@ const LeftTextContainer = () => {
   }, []);
 
   return (
-    <section className="w-full overflow-hidden md:mt-14">
+    <section className="w-full overflow-hidden md:mt-14" id="information">
       <div className="flex flex-col items-center justify-between max-w-5xl px-2 py-4 mx-auto md:flex-row">
         <div className="w-full md:w-6/12">
           <h2 className="text-textDev font-extrabold  text-[24px] mt-10 titleLeftText">
