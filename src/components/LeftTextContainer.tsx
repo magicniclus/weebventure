@@ -72,10 +72,13 @@ const LeftTextContainer = () => {
             Un service et un accompagnement personnalisé
           </h2>
           <p className="text-[12px] w-10/12 mt-5 textLeftText">
-            Vous portez un projet web ? Nous possédons l&apos;expertise
-            nécessaire pour vous guider, développer et peaufiner votre concept.
-            Nous établissons une véritable relation de partenariat avec nos
-            clients.
+            Vous portez un projet web ? De la conception initiale au design, en
+            passant par le développement jusqu&apos;à la maintenance, nous
+            possédons l&apos;expertise nécessaire pour vous accompagner à chaque
+            étape. En établissant une véritable relation de partenariat avec nos
+            clients, nous assurons une transition fluide et une croissance
+            soutenue de votre projet. Confiez-nous votre vision, et ensemble,
+            donnons-lui vie
           </p>
           <div>
             <a
